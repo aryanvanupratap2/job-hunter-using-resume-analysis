@@ -1,0 +1,17 @@
+# Web Framework & Server
+fastapi
+uvicorn
+
+# AI & Agentic Orchestration
+google-genai
+langgraph
+langchain-tavily
+
+# Document Processing & Utils
+pypdf
+python-dotenv
+pytz
+
+# Frontend
+streamlit
+requests
