@@ -11,7 +11,7 @@ uploaded_file = st.file_uploader("Upload Resume (PDF)", type="pdf")
 if uploaded_file and st.button("Start Analysis"):
     with st.spinner("Searching the live market and analyzing..."):
         files = {"file": (uploaded_file.name, uploaded_file.getvalue(), "application/pdf")}
-        response = requests.post("http://localhost:8000/analyze", files=files)
+        response = requests.post("https://job-hunter-using-resume-analysis.onrender.com/", files=files)
         
         if response.status_code == 200:
             res = response.json()["analysis"]
@@ -30,4 +30,5 @@ if uploaded_file and st.button("Start Analysis"):
                 with st.expander(f"{job['title']}"):
                     st.link_button("View & Apply", job["link"])
         else:
+
             st.error("Error connecting to backend server.")
